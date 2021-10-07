@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
-    'app.bookmark.apps.BookmarkConfig'
+    'app.bookmark.apps.BookmarkConfig',
+    'app.blog.apps.BlogConfig'
 ]
 
 MIDDLEWARE = [
