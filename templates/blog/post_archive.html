@@ -1,0 +1,22 @@
+<h1>{% now "Y년 m월 d일 (D)" %} 까지 작성된 포스트</h1>
+
+<ul>
+    {% for date in date_list %}
+        <li style="display: inline">
+            <a href="{% url 'blog:post_year_archive' date|date:'Y' %}">{{ date|date:'Y' }}년</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<div>
+    <ul>
+        {% for post in object_list %}
+            <li>
+                {{ post.modify_dy|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
+                <a href="{{ post.get_absolute_url }}">
+                    <strong>{{ post.title }}</strong>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
