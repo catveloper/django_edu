@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
     'app.bookmark.apps.BookmarkConfig',
     'app.blog.apps.BlogConfig'
 ]
@@ -133,3 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media file root
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Taggit config
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50

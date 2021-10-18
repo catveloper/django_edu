@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
@@ -9,6 +10,7 @@ class Post(models.Model):
     slug = models.SlugField('별칭', unique=True, allow_unicode=True, help_text='one word for title alias.')
     description = models.CharField('설명', max_length=100, blank=True, help_text='simple description text')
     content = models.TextField('내용')
+    tags = TaggableManager(blank=True)
     created_dt = models.DateTimeField('작성일', auto_now_add=True)
     modify_dt = models.DateTimeField('수정일', auto_now=True)
 
